@@ -295,65 +295,144 @@
             color: var(--text-secondary);
         }
         
-        /* Contact Section */
-        .contact {
-            background-color: var(--accent);
-        }
-        
-        .contact-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 50px;
-        }
-        
-        .contact-info h3 {
-            color: var(--primary);
-            margin-bottom: 20px;
-            font-size: 1.8rem;
-        }
-        
-        .contact-info p {
-            margin-bottom: 30px;
-            color: var(--text-secondary);
-        }
-        
-        .contact-details {
-            margin-top: 30px;
-        }
-        
-        .contact-details div {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        
-        .contact-details i {
-            color: var(--primary);
-            font-size: 1.2rem;
-            margin-right: 15px;
-            width: 30px;
-        }
-        
-        .contact-form .form-group {
-            margin-bottom: 25px;
-        }
-        
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 15px;
-            background-color: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 4px;
-            color: var(--text);
-            font-size: 1rem;
-        }
-        
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
+        /* ===== MAP SECTION ===== */
+.map-section {
+    background: #000000;
+    padding: 80px 0;
+}
+
+.map-card {
+    background: rgba(20, 20, 20, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(204, 255, 0, 0.15);
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, border-color 0.3s;
+    max-width: 1000px;
+    margin: 0 auto; /* center the card */
+}
+
+.map-card:hover {
+    border-color: rgba(204, 255, 0, 0.4);
+    transform: translateY(-5px);
+}
+
+.map-container {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.map-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+}
+
+
+.map-address {
+    color: #b0b0b0;
+    font-size: 1.1rem;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.map-address i {
+    font-size: 1.3rem;
+}
+
+/* ===== FAQ SECTION ===== */
+.faq-section {
+    background: #000000;
+    padding: 80px 0;
+}
+
+.faq-card {
+    background: rgba(20, 20, 20, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(204, 255, 0, 0.15);
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, border-color 0.3s;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-card:hover {
+    border-color: rgba(204, 255, 0, 0.4);
+    transform: translateY(-5px);
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.faq-item {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: left;
+    transition: color 0.3s;
+}
+
+.faq-question:hover {
+    color: #ccff00;
+}
+
+.faq-question i {
+    transition: transform 0.3s;
+    color: #ccff00;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s;
+    padding: 0 0;
+    color: #b0b0b0;
+    line-height: 1.6;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px; /* adjust based on content */
+    padding: 0 0 15px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .map-card, .faq-card {
+        padding: 20px;
+    }
+    .faq-question {
+        font-size: 1rem;
+    }
+}
         
         /* Footer */
         footer {
@@ -517,12 +596,12 @@
     <!-- Header & Navigation -->
     <header id="header">
         <div class="container header-container">
-  <a href="./" class="logo" style="color: #ccff00;">
+            <a href="./" class="logo" style="color: #ffffff;">
     <img src="logo.png" alt="LocateMyRide247 Logo" style="height: 60px; width: auto;">
     Locatemyride247
 </a>
         
-        
+
         <button class="mobile-menu-btn" id="mobileMenuBtn">
             <i class="fas fa-bars"></i>
         </button>
@@ -631,122 +710,152 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Get In Touch</h2>
-                <p>Contact us for more information or to get started with Locatemyride247 today.</p>
-            </div>
-            
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <p>We're here to help you protect your vehicle with our advanced tracking technology. Reach out to us with any questions.</p>
-                    
-                    <div class="contact-details">
-                        <div>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h4>Our Location</h4>
-                                <p>Agric bus stop,Ikorodu</p>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h4>Phone Number</h4>
-                                <p>(+234) 807 1511 451</p>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h4>Email Address</h4>
-                                <p>locatemyride247@gmail.com</p>
-                            </div>
-                        </div>
+  <!-- Map Section (separate) -->
+<section class="map-section" id="map">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Location</h2>
+            <p>Find us here – we're always on the move.</p>
+        </div>
+        <div class="map-card">
+            <div class="map-container" style="padding:0; background: none;">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10279.278771611891!2d3.4855963927163853!3d6.621603692228667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bec3ea5267ae5%3A0x5e9d66b031b94283!2sAgric%20Bus%20Terminal!5e0!3m2!1sen!2sng!4v1771012816398!5m2!1sen!2sng" width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+            <p class="map-address">
+                <i class="fas fa-map-marker-alt" style="color: #ccff00;"></i>
+                Agric Bustop, Ikorodu, Lagos
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section (separate) -->
+<section class="faq-section" id="faq">
+    <div class="container">
+        <div class="section-title">
+            <h2>Frequently Asked Questions</h2>
+            <p>Got questions? We've got answers.</p>
+        </div>
+        <div class="faq-card">
+            <div class="faq-list">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How does the tracking work?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our GPS devices transmit real‑time location data to our secure servers. You can view your vehicle's position anytime via our mobile app or web dashboard.</p>
                     </div>
                 </div>
-                
-                <div class="contact-form">
-                    <form
-  action="https://formspree.io/f/xeelowaq"
-  method="POST"
->           <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <textarea rows="5" placeholder="Your Message" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Is there a monthly fee?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, we offer flexible subscription plans starting from ₦5,000/month. Each plan includes 24/7 support and all features.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can I track multiple vehicles?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely! Our fleet management solution lets you monitor an unlimited number of vehicles from a single account.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 4 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What about installation?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Installation is simple – We help you with installion and we offer you a professional setup.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 5 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do you offer international tracking?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, our devices work in over 50 countries. Please contact us for specific coverage details.</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-col">
-                    <h3>Locatemyride247</h3>
-                    <p>Advanced vehicle tracking solutions for personal and commercial use. Never lose track of what matters most.</p>
-                    <div class="social-links">
-                          <a href="https://web.facebook.com/?ref=homescreenpwa" target="_blank" title="Follow us on Facebook">
-        <i class="fab fa-facebook-f"></i>
-    
-                         <a href="https://www.tiktok.com/foryou?lang=en" target="_blank" title="Follow us on TikTok">
-        <i class="fab fa-tiktok"></i>
-    </a>
-                          <a href="https://www.instagram.com/loca.temyride247/?__pwa=1" target="_blank" title="Follow us on Instagram">
+   <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <!-- Column 1: Brand (unchanged) -->
+            <div class="footer-col">
+                <h4>LOCATEMY<span style="color: #ccff00;">RIDE247</span></h4>
+                <p>Advanced vehicle tracking solutions for personal and commercial use. Never lose track of what matters most.</p>
+                <div class="social-links">
+                   <a href="https://web.facebook.com/?ref=homescreenpwa" target="_blank" title="Follow us on Facebook">
+        <i class="fab fa-facebook-f"></i></a>                    
+<a href="https://www.tiktok.com/foryou?lang=en" target="_blank" title="Follow us on TikTok">
+        <i class="fab fa-tiktok"></i></a>                    
+<a href="https://www.instagram.com/loca.temyride247/?__pwa=1" target="_blank" title="Follow us on Instagram">
         <i class="fab fa-instagram"></i>
     </a>
-                            <!-- WhatsApp Contact -->
-    <a href="https://wa.me/2348071511451?text=Hello%20LocateMyRide247,%20I%20saw%20your%20website%20and%20want%20to%20learn%20more%20about%20your%20tracking%20services" 
+ <a href="https://wa.me/2348071511451?text=Hello%20LocateMyRide247,%20I%20saw%20your%20website%20and%20want%20to%20learn%20more%20about%20your%20tracking%20services" 
        target="_blank" 
        title="Message us on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
-              </div>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#how-it-works">How It Works</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Our Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Personal Vehicle Tracking</a></li>
-                        <li><a href="#">Fleet Management</a></li>
-                        <li><a href="#">Motorcycle Tracking</a></li>
-                        <li><a href="#">Asset Tracking</a></li>
-                    </ul>
                 </div>
             </div>
             
-            <div class="copyright">
-                <p>&copy; 2026 LocateMyRide247. All rights reserved.</p>
+            <!-- Column 2: Shop (contains your original Services) -->
+            <div class="footer-col">
+                <h4><span style="color: #ccff00;">Our Service</span></h4>
+                <ul class="footer-links">
+                    <li><a href="#">Personal Vehicle Tracking</a></li>
+                    <li><a href="#">Fleet Management</a></li>
+                    <li><a href="#">Motorcycle Tracking</a></li>
+                    <li><a href="#">Asset Tracking</a></li>
+                </ul>
+            </div>
+            
+            <!-- Column 3: Support (contains your original Quick Links) -->
+            <div class="footer-col">
+                <h4><span style="color: #ccff00;">Quick Links</span></h4>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            
+            <!-- Column 4: Contact (unchanged) -->
+            <div class="footer-col">
+                <h4><span style="color: #ccff00;">Contact</span></h4>
+                <ul class="footer-links">
+                    <li><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i>Agric Busstop, Ikorodu, Lagos</li>
+                    <li><i class="fas fa-phone" style="margin-right: 10px;"></i> (+234) 807 1511 451</li>
+                    <li><i class="fas fa-envelope" style="margin-right: 10px;"></i> locatemyride247@gmail.com</li>
+                </ul>
             </div>
         </div>
-    </footer>
+        
+        <div class="copyright">
+            <p>&copy; 2026 LocateMyRide247. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
 
     <script>
         // Mobile Menu Toggle
@@ -797,23 +906,6 @@
             });
         });
         
-        // Form submission
-        const contactForm = document.getElementById('contactForm');
-        
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const name = this.querySelector('input[type="text"]').value;
-            const email = this.querySelector('input[type="email"]').value;
-            
-            // In a real application, you would send this data to a server
-            // For this example, we'll just show an alert
-            alert(`Thank you ${name}! We have received your message and will contact you at ${email} shortly.`);
-            
-            // Reset the form
-            this.reset();
-        });
         
         // Add active class to current section in navigation
         const sections = document.querySelectorAll('section');
@@ -946,8 +1038,16 @@
         }
     });
 </script>
+<script>  
+    // ... (all your existing JavaScript) ...
+
+    // ===== FAQ ACCORDION (ADD THIS) =====
+    document.querySelectorAll('.faq-question').forEach(button => {
+        button.addEventListener('click', () => {
+            const faqItem = button.parentElement;
+            faqItem.classList.toggle('active');
+        });
+    });
+</script>
 </body>
-
 </html>
-
-
